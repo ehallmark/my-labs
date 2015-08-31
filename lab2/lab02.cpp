@@ -47,7 +47,7 @@ string DecodeText(string & msg)
 int main()
 {	
 	// Do not change this secret text
-	string secret = "-vgpagq]0`cn-0`cn-q`cn-623qa-wfg,aqw,qvk`";
+	string secret = "novj,vgpagq]02`cn-q`cn-623qa-wfg,aqw,qvk`";
 	cout << "secret:  " << secret << endl;
 	string rev = ReverseText(secret);
 	cout << "Reverse: " << rev << endl;
