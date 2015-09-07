@@ -1,4 +1,4 @@
-Lab 2
+Lab 3
 ==========
 
-lab 2 practice code. Visit the [lab](http://bits.usc.edu/cs104/labs/lab03.html) page for instruction.
+lab 3 practice code. Visit the [lab](http://bits.usc.edu/cs104/labs/lab03.html) page for instruction.
