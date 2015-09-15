@@ -1,4 +1,4 @@
-# Preface - Code Style and Common Debugging Problems
+# Preface - Code Style
 
 Before we begin lab today, we want to briefly talk about the benefits of good code style and organization. More than likely,
 you will not be the only person reading your code. You may also want to contribute to or take over someone else's code base 
