@@ -8,7 +8,7 @@ recruiter, etc.), they want to be able to understand what you're doing as fast a
 poorly proofread essay is painful to read and takes much more effort to understand. 
 
 We want to share with you some common code guidelines. A lot of these tips are copied from the 
-(Google C++ Style Guide)[https://google-styleguide.googlecode.com/svn/trunk/cppguide.html] which is much more than we'll need 
+[Google C++ Style Guide](https://google-styleguide.googlecode.com/svn/trunk/cppguide.html) which is much more than we'll need 
 for this class. 
 
 #### Indentation
