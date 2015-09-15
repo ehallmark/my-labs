@@ -230,7 +230,7 @@ Run the test again, and it should now pass with flying colors - green, that is.
 
 Now that we understand how to run tests, we're going to practice testing on a class implementation. In particular, this is an ArrayList class, like the one you've finished in HW2.
 
-### 2.1 Understanding Fictures
+### 2.1 Understanding Fixtures
 
 When we test classes, we often need some initialization before we can test. For example, initializing classes with the correct constructor parameters, populating an array, etc. Because these setup are usually repeated across multiple test cases, we put them in "Fixtures"
 
