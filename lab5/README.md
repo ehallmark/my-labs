@@ -25,7 +25,9 @@ In this lab, you will learn to use the STL Map class and use it to create your o
 AGENDA:
 
 - How to use STL Maps
+- Learn about Operator Overloading
 - Shallow vs. Deep Copy - Copy Constructor
+- Create an `ostream` '<<' Operator
 - Create an Assignment Operator
 - Create a Plus Operator
 
