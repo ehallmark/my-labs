@@ -185,6 +185,8 @@ std::ostream& operator<<(std::ostream& os, const Order& o) {
 }
 ```
 
+Notice we don't put `Order::functionName()` for this operator overload. Once again, `ostream` owns this function, so this function either needs to be a member of the `ostream` class, or a free function. 
+
 Further reading: [Operator Overloading Guidelines](http://courses.cms.caltech.edu/cs11/material/cpp/donnie/cpp-ops.html)
 
 
