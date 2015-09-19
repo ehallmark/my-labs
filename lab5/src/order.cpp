@@ -33,9 +33,9 @@ void Order::clearOrder() {
 }
 
 // Prints out what items are in the order and their corresponding amounts - Part 2
-std::ostream& Order::operator<<(std::ostream& os, const Order& o) {
+std::ostream& operator<<(std::ostream& os, const Order& o) {
 	// STUB: Display each item and its amount
-    return os;
+	return os;
 }
 
 // Assigns Order RHS values to the current Order's values - Part 2
