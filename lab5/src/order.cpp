@@ -18,7 +18,7 @@ Order::Order(std::string i)
 	// can use (*items)[i] = 1, which does not care if the key already exists
 }
 
-// Copy Constructor - Part 1
+// Copy Constructor - Part 2
 Order::Order(const Order &rhs) {
 	// STUB: Assign rhs contents to this
 }
@@ -32,7 +32,7 @@ void Order::clearOrder() {
 	items->clear();
 }
 
-// Prints out what items are in the order and their corresponding amounts - Part 2
+// Prints out what items are in the order and their corresponding amounts - Part 1 and Part 3
 std::ostream& operator<<(std::ostream& os, const Order& o) {
 	// STUB: Display each item and its amount
 	return os;
