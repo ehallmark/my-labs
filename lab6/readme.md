@@ -1,4 +1,4 @@
-# Lab 7 - Qt Basics
+# Lab 6 - Qt Basics
 
 In this lab, we'll be learning about a library called **Qt** (pronounced "cute"). It is widely popular, available across many platforms (including iOS and Android!), and offers a very robust frameowrk for Graphical User Interface programs. Sadly, we're not using their latest version (4.8 instead of 5.5), because Virtualbox doesn't play nice.
 
@@ -182,7 +182,7 @@ We have provided several classes for you:
 A note about the `.pro` file: Since the c++11 `auto` keyword is used here, we have to compile with `-std=c++11`. This is set in the `QMAKE_CXXFLAGS` option. If you run `qmake -project`, it'll override that file, removing the c++11 setting, and generating compile errors.
 
 **What you need to do**:
-- Finish the `PostWidget` class constructor based on a `Post`. They should be in a GridLayout - feel free to be creative about the layout, or just follow the screenshot of the example above.
+- Finish the `PostWidget` class constructor based on a `Post`. They should be in a GridLayout - feel free to be creative about the layout, it doesn't have to be too fancy, but it should show all the data in a nice manner.
 	- `main.cpp` is set to just show one PostWidget. So if you make you focus on the `PostWidget`, compiling and running should show your changes immediately.
 	- When you're done with this part, open `main.cpp` and uncomment the lines appropriately so that the MainWindow shows instead.
 - Finish `setupPosts()`, which takes in a vector of `Post`s and create `PostWidget` dynamically
@@ -196,7 +196,7 @@ A note about the `.pro` file: Since the c++11 `auto` keyword is used here, we ha
 
 Some tips:
 
-- If you look at the example layout screenshot - you should notice that there are 3 rows and 3 columns in each `PostWidget`. How can you use GridLayout properties to lay them out?
+- We suggest laying out the posts in 3 rows and 3 columns. How can you use GridLayout properties to lay them out?
 - To change the text size / boldness, use [QFont](http://qt-project.org/doc/qt-4.8/qfont.html):
 	```cpp
 		QFont titleFont;
@@ -215,3 +215,9 @@ Some tips:
 		QApplication::exit();
 	```
 - Qt is very well documented. You might want to check out documentation for [QGridLayout](http://qt-project.org/doc/qt-4.8/qgridlayout.html), [QLabel](http://qt-project.org/doc/qt-4.8/qlabel.html), [QPushButton](http://qt-project.org/doc/qt-4.8/qpushbutton.html), etc.
+
+
+## 5 - Extra practice
+We have an extra lab6-extended that you can work on by yourself if you like. It is not required but it would be good practice and it is a cool simple project. It hooks up your Reddit client to the actual site so that you can use your GUI to read Reddit!
+
+The link to it can be found here [lab6-extended](http://bits.usc.edu/cs104/labs/lab06-extended.html)
