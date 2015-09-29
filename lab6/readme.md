@@ -1,4 +1,4 @@
-# Lab 7 - Qt Basics
+# Lab 6 - Qt Basics
 
 In this lab, we'll be learning about a library called **Qt** (pronounced "cute"). It is widely popular, available across many platforms (including iOS and Android!), and offers a very robust frameowrk for Graphical User Interface programs. Sadly, we're not using their latest version (4.8 instead of 5.5), because Virtualbox doesn't play nice.
 
