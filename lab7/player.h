@@ -16,7 +16,7 @@ class Player {
 		bool isDead();
 		std::string getName();
 		
-		void doAction(Player*);
+		virtual void doAction(Player*) = 0;
 
 	private:
 		std::string name_;
