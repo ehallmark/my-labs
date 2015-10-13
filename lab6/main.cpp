@@ -12,14 +12,15 @@ int main(int argc, char *argv[]) {
 
  	// Testing for PostWidget. Create one and show that.
  	// COMMENT THE NEXT TWO LINES WHEN YOU FINISH POST_WIDGET
- 	PostWidget pw(r->getPosts()[0]);
- 	pw.show();
+ 	
+ 	//PostWidget pw(r->getPosts()[0]);
+ 	//pw.show();
 
  	// Testing with the MainWindow, which should display a list of post widgets
  	// UNCOMMENT THE NEXT THREE LINES WHEN YOU FINISH POST_WIDGET
-  // MainWindow mw(r);
-  // mw.setWindowTitle("CS104 Reddit!");
-  // mw.show();
+   MainWindow mw(r);
+   mw.setWindowTitle("CS104 Reddit!");
+   mw.show();
 
   return app.exec();
 }

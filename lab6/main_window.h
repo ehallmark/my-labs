@@ -21,6 +21,7 @@ class MainWindow : public QWidget {
 		void showAbout();
 		// ADD YOUR CODE HERE
 		// declare a quit function under "slots"
+		void quit();
 		
 	private:
 		void setupPosts(std::vector<Post*>);
@@ -36,9 +37,10 @@ class MainWindow : public QWidget {
 
 		// ADD YOUR CODE HERE
 		// add a quit button
-
+		QPushButton* quitButton;
 		std::vector<PostWidget*> postWidgets;
 };
+
 
 #endif
 

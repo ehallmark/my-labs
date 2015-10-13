@@ -4,6 +4,7 @@
 #include <vector>
 #include <map>
 #include <string>
+#include <iostream>
 
 class Inventory : private std::map<std::string, int> {
 public:

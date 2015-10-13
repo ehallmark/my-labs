@@ -26,6 +26,9 @@ MainWindow::MainWindow(Reddit* r) {
 
 	// ADD YOUR CODE HERE
 	// Create a new button with the text "Quit"
+	quitButton = new QPushButton("Quit");
+	layout->addWidget(quitButton);
+	setMinimumWidth(700);
 	
 	setLayout(layout);
 	show();
@@ -34,6 +37,7 @@ MainWindow::MainWindow(Reddit* r) {
 
 	// ADD YOUR CODE HERE
 	// Connect the quit button to the quit slot function
+	connect(quitButton,SIGNAL(clicked()), this, SLOT(quit()));
 }
 
 MainWindow::~MainWindow() {
@@ -44,6 +48,7 @@ MainWindow::~MainWindow() {
 
 	// ADD YOUR CODE HERE
 	// Delete the quit button pointer
+	delete quitButton;
 }
 
 void MainWindow::setupPosts(std::vector<Post*> posts) {
@@ -54,6 +59,13 @@ void MainWindow::setupPosts(std::vector<Post*> posts) {
 	// 1. create a PostWidget
 	// 2. add the PostWidget to the correct layout
 	// 3. add the PostWidget to the vector so that we can delete the pointers later
+	std::vector<Post*>::iterator it;
+	for(it = posts.begin(); it != posts.end(); ++it) {
+		PostWidget* pw = new PostWidget(*it);
+		postsLayout->addWidget(pw);
+		postWidgets.push_back(pw);
+	}
+
 }
 
 void MainWindow::clearPosts() {
@@ -62,6 +74,13 @@ void MainWindow::clearPosts() {
 	// 1. remove them from layout with removeWidget(QWidget*)
 	// 2. delete the pointer
 	// Then clear the vector
+	std::vector<PostWidget*>::iterator it;
+	for(it = postWidgets.begin(); it != postWidgets.end(); ++it) {
+		postsLayout->removeWidget(*it);
+		delete *it;
+	}
+	postWidgets.clear();
+
 }
 
 void MainWindow::showAbout() {
@@ -70,3 +89,6 @@ void MainWindow::showAbout() {
 
 // ADD YOUR CODE HERE
 // Create a quit function, that serves as a slot for the exit button.
+void MainWindow::quit() {
+	QApplication::quit();
+}

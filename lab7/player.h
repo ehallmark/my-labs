@@ -16,8 +16,9 @@ class Player {
 		bool isDead();
 		std::string getName();
 		
-		void doAction(Player*);
-
+		virtual void doAction(Player*);
+		// ^^^^ MAKE THIS VIRTUAL OR TESTS WILL FAIL
+		
 	private:
 		std::string name_;
 		Inventory * inv;
