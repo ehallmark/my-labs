@@ -5,7 +5,7 @@
 #include <QTextEdit>
 #include <QPushButton>
 #include <QListWidget>
-
+#include <iostream>
 #include <string>
 #include <vector>
 
@@ -43,8 +43,6 @@ private:
 	QLineEdit* imageFilenameInput;
 	QPushButton* addButton;
 
-
-
 	// // Data
 	// note: the index of each name in `pokemonNames`
 	// corresponds with the index of that pokemon's
@@ -54,4 +52,5 @@ private:
 	std::vector<std::string> pokemonNames;
 	// List of pokemon images
 	std::vector<QImage*> pokemonImages;
+
 };
