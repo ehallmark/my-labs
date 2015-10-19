@@ -1,4 +1,4 @@
-# Lab 10 - Templates
+# Lab 09 - Templates
 
 At this point in the course, we've created many simple data structures ourselves, as well as used a number of already-templated STL classes. The goal of this lab is to learn how to actually create these templated classes ourselves.
 
@@ -36,9 +36,9 @@ Notice that with Pair, we are listing that two classes can be specified. We're g
 
 ### Do not pre-compile!
 
-Another thing you'll notice is that the class's implementations for all its methods are included in this header file. This is not a bad practice, but in fact, it is required for templated class to do so, since templated classes cannot be pre-compiled. 
+Another thing you'll notice is that the class's implementations for all its methods are included in this header file. This is not a bad practice, but in fact, it is required for templated class to do so, since templated classes cannot be pre-compiled.
 
-As we've mentioned from the Coding Guide, 
+As we've mentioned from the Coding Guide,
 
 > Each source file the compiler knows about is compiled in its own translation unit and it only knows about its own contents and the contents that other source files export. Source files export all globally visible variables and functions. Normally when you write some non templated code, it gets fully compiled since all the types are known and it can be exported to other translation units (other source files). When you have template code, that template is just a blueprint of what the compiler has to do when it gets a type. It is not until you instantiate your template by saying ”I want a List of strings” (List) that the compiler goes ahead and tries to actually generate the code where it replaces with `T = std::string`.
 
@@ -48,11 +48,10 @@ Therefore, since it is impossible for the compiler to know ahead of time what sp
 
 We have included a simplified version of LListInt in here - your job is to template it and make it usable with any class, not just int's. We have already changed the name from `LListInt` to a simple `LList`
 
-What you need to do: 
+What you need to do:
 
-1. Copy the contents from `llist.cpp` into the bottom of `llist.h`, since we do not want templated class implementations in their own file. 
+1. Copy the contents from `llist.cpp` into the bottom of `llist.h`, since we do not want templated class implementations in their own file.
 2. Template the struct `Item`. It is setup to store an int variable, but that needs to change, too.
 2. Template the class - include `template < >` tags wherever the class is mentioned. Since there is only one generic type - convention usually names it `T` (instead of `FirstType`, `SecondType`).
 3. Change (almost) all mentions of `int` to `T`. Reference to the class `Item` needs to be changed as well - remember that it is not templated.
 4. Make, and see if the main file works.
-
