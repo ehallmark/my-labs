@@ -15,7 +15,7 @@ Through templates, however, we could treat a type as a variable, and specify it 
 One of the simplest templated examples we've encountered so far is the `std::pair` class. It is declared with two "types", and values of the sepcified types are passed in to the constructor. In a templated class, functions signatures and parameters can be defined "programatically". For example:
 
 ```
-Pair<double, string> student(1234567890, "Arush Shakar");
+Pair<double, string> student(1234567890, "Arush Shankar");
 Pair<string, int> question("What is the answer to life, nuiverse, and everything?", 42);
 ```
 
