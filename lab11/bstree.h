@@ -52,8 +52,18 @@ bool BSTree<T>::search(const T& value) {
 
 template <typename T>
 bool BSTree<T>::searchInTree(Item<T>* node, const T& value) {
-	// TODO
-	// implement searching
+    // cannot examine any further
+    if(node == NULL)
+        return false;
+    // found
+    if(value == node->val)
+        return true;
+    // go left
+    if(value < node->val)
+        return searchInTree(node->left, value);
+    // go right
+    else
+        return searchInTree(node->right, value);
 }
 
 template <typename T>
@@ -80,7 +90,35 @@ Item<T>* BSTree<T>::insertInTree(Item<T>* node, const T& value) {
 	// TODO
 	// Feel free to modify any return values or parameters.
 	// You can also choose to do your work in insert() instead.
-	return new Item<T>();
+	if(root == NULL) {
+		root = new Item<T>();
+		root->val=value;
+        return root;
+    }
+    // found
+    if(node->val==value)
+        return root;
+    // go left
+    if(value < node->val) {
+    	if (node->left != NULL) {
+        	return insertInTree(node->left, value);
+    	} else {
+    		node->left = new Item<T>();
+    		node->left->val=value;
+    		return root;
+    	}
+    }
+
+    // go right
+    else {
+    	if (node->right != NULL) {
+        	return insertInTree(node->right, value);
+        } else {
+    		node->right = new Item<T>();
+    		node->right->val=value;
+    		return root;
+        }
+    }
 }
 
 /* In Order Traversal */
@@ -96,6 +134,13 @@ template <typename T>
 void BSTree<T>::inOrderTraversalHelper(std::vector<T>& list, Item<T>* node){
 	// TODO
 	// implement in order
+	if(node->left != NULL) {
+        inOrderTraversalHelper(list, node->left);
+    }
+    list.push_back(node->val);
+    if(node->right != NULL) {
+        inOrderTraversalHelper(list, node->right);
+    }
 }
 
 /* Pre Order Traversal */
@@ -111,6 +156,13 @@ template <typename T>
 void BSTree<T>::preOrderTraversalHelper(std::vector<T>& list, Item<T>* node){
 	// TODO
 	// implement pre order
+    list.push_back(node->val);
+	if(node->left != NULL) {
+        preOrderTraversalHelper(list, node->left);
+    }
+    if(node->right != NULL) {
+        preOrderTraversalHelper(list, node->right);
+    }
 }
 
 /* Post Order Traversal */
@@ -124,5 +176,11 @@ std::vector<T> BSTree<T>::postOrderTraversal(){
 
 template <typename T>
 void BSTree<T>::postOrderTraversalHelper(std::vector<T>& list, Item<T>* node){
-	// TODO
+    if(node->left != NULL) {
+        postOrderTraversalHelper(list, node->left);
+    }
+    if(node->right != NULL) {
+        postOrderTraversalHelper(list, node->right);
+    }
+    list.push_back(node->val);
 }
