@@ -97,10 +97,55 @@ bool Sudoku::isValid(int row, int col) {
 }
 
 void Sudoku::solve(){
-  solveHelper(0, 0);
+  solveHelper(0, 0); 
 }
 
+bool Sudoku::isDone() {
+  for(int i = 0; i < 9; i++) {
+    for(int j = 0; j < 9; j++) {
+      if(!isValid(i, j)) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
 
 bool Sudoku::solveHelper(int row, int col) {
   // TODO: IMPLEMENT THIS
+  // Handle end cases
+  if (this->isDone()) {
+    for (int i = 1; i<=9; i++) {
+      this->board[8][8] = i;
+      if(this->isValid(8,8)) {
+        return true;
+      } 
+    }
+  } else if(!(this->board[row][col])) {
+    //needs to be solved
+    for (int i = 1; i<=9; i++) {
+      this->board[row][col] = i;
+      if(this->isValid(row,col)) {
+        if (solveHelper(row,col)) {
+          for (int i = 1; i<=9; i++) {
+            this->board[8][8] = i;
+            if(this->isValid(8,8)) {
+              return true;
+            } 
+          }
+          return true;
+        }
+      } else {
+        this->board[row][col] = 0;
+      }
+    }
+  } else {
+    // solve the next one
+    if ((col==8) && (row ==8)) { return false; }
+    else if ((col < 8) && (row==8)) { return solveHelper(0,col+1); }
+    else if ((row < 8) && (col==8)) { return solveHelper(row+1,col); }
+    else { return solveHelper(row+1,col); }
+  }
+
+  return false;
 } 

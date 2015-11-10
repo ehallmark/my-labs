@@ -17,6 +17,10 @@ private:
 	int board[9][9];
 
 	// add extra helper functions here
+	bool in_row(int row, int col, int n);
+	bool in_col(int row, int col, int n);
+	bool in_square(int row, int col, int n);
+	bool isDone();
 };
 
 #endif
